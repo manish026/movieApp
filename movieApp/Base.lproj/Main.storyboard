@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A315i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TPq-51-3T8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A315i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -78,49 +77,88 @@
         <!--Content Tut View Controller-->
         <scene sceneID="JCq-5V-moU">
             <objects>
-                <viewController storyboardIdentifier="vc" id="5hn-tO-RE8" customClass="ContentTutViewController" sceneMemberID="viewController">
+                <viewController id="5hn-tO-RE8" customClass="ContentTutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oho-OO-XbZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="g7z-wV-gUz">
-                                <rect key="frame" x="36" y="50" width="303" height="607"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hello how are you am finehello how are you am finehello how are you am finehello how are you am fine" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UFH-gh-rJO">
-                                        <rect key="frame" x="0.0" y="0.0" width="303" height="116"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Urx-I3-vOq">
-                                        <rect key="frame" x="0.0" y="136" width="303" height="471"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Urx-I3-vOq" secondAttribute="trailing" id="ENx-e2-JCi"/>
-                                    <constraint firstAttribute="trailing" secondItem="UFH-gh-rJO" secondAttribute="trailing" id="Hos-KV-yjV"/>
-                                    <constraint firstItem="UFH-gh-rJO" firstAttribute="leading" secondItem="g7z-wV-gUz" secondAttribute="leading" id="IF9-KY-t2V"/>
-                                    <constraint firstItem="Urx-I3-vOq" firstAttribute="leading" secondItem="g7z-wV-gUz" secondAttribute="leading" id="QkH-m9-YEw"/>
-                                </constraints>
-                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BiE-1I-ppB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.25487916719999998" green="1" blue="0.41931294180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.25487916719999998" green="1" blue="0.41931294180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="g7z-wV-gUz" firstAttribute="top" secondItem="oho-OO-XbZ" secondAttribute="topMargin" constant="50" id="MiT-ml-a7R"/>
-                            <constraint firstAttribute="bottom" secondItem="g7z-wV-gUz" secondAttribute="bottom" constant="10" id="QQ3-NK-wBk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="g7z-wV-gUz" secondAttribute="trailing" constant="20" id="Wiv-S7-ZyV"/>
-                            <constraint firstItem="g7z-wV-gUz" firstAttribute="leading" secondItem="oho-OO-XbZ" secondAttribute="leadingMargin" constant="20" id="mLe-KJ-k4R"/>
-                            <constraint firstItem="g7z-wV-gUz" firstAttribute="centerX" secondItem="oho-OO-XbZ" secondAttribute="centerX" id="rbt-tA-QAw"/>
+                            <constraint firstAttribute="bottom" secondItem="BiE-1I-ppB" secondAttribute="bottom" id="11Q-DJ-pZv"/>
+                            <constraint firstItem="BiE-1I-ppB" firstAttribute="leading" secondItem="oho-OO-XbZ" secondAttribute="leading" id="AGh-Q5-dtc"/>
+                            <constraint firstItem="BiE-1I-ppB" firstAttribute="top" secondItem="oho-OO-XbZ" secondAttribute="top" id="Jd0-mx-Nht"/>
+                            <constraint firstAttribute="trailing" secondItem="BiE-1I-ppB" secondAttribute="trailing" id="aNs-Cp-jMR"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="titleLabel" destination="UFH-gh-rJO" id="xWv-bj-nP2"/>
-                        <outlet property="tutImageView" destination="Urx-I3-vOq" id="mCO-na-kCH"/>
-                    </connections>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c47-oY-K4g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="36" y="38.23088455772114"/>
+        </scene>
+        <!--Content Tut View Controller-->
+        <scene sceneID="7Dn-Bg-Mzn">
+            <objects>
+                <viewController storyboardIdentifier="vc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="quJ-kp-HYQ" customClass="ContentTutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nDE-1E-VOw"/>
+                        <viewControllerLayoutGuide type="bottom" id="SfJ-IC-uhT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RnZ-ma-7SX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Isu-cF-2l1">
+                                <rect key="frame" x="20" y="50" width="335" height="597"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WpH-kZ-Ja3">
+                                        <rect key="frame" x="0.5" y="0.0" width="334" height="106"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hello how are you am finehello how are you am finehello how are you am finehello how are you am fine" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ll6-OP-4bb">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="106"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1iv-af-QRF">
+                                        <rect key="frame" x="0.0" y="126" width="335" height="471"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="WpH-kZ-Ja3" firstAttribute="leading" secondItem="Isu-cF-2l1" secondAttribute="leading" id="0Lq-UX-6wc"/>
+                                    <constraint firstItem="1iv-af-QRF" firstAttribute="leading" secondItem="Isu-cF-2l1" secondAttribute="leading" id="CE3-6y-e5K"/>
+                                    <constraint firstAttribute="trailing" secondItem="WpH-kZ-Ja3" secondAttribute="trailing" id="HAU-Ds-fIw"/>
+                                    <constraint firstAttribute="trailing" secondItem="1iv-af-QRF" secondAttribute="trailing" id="Jfa-N8-bo0"/>
+                                    <constraint firstAttribute="trailing" secondItem="WpH-kZ-Ja3" secondAttribute="trailing" id="s37-br-oIg"/>
+                                    <constraint firstItem="WpH-kZ-Ja3" firstAttribute="leading" secondItem="Isu-cF-2l1" secondAttribute="leading" id="snQ-Pe-L6u"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SfJ-IC-uhT" firstAttribute="top" secondItem="Isu-cF-2l1" secondAttribute="bottom" constant="20" id="A2i-Do-gzj"/>
+                            <constraint firstItem="Isu-cF-2l1" firstAttribute="top" secondItem="nDE-1E-VOw" secondAttribute="bottom" constant="30" id="UeM-dK-Ios"/>
+                            <constraint firstItem="Isu-cF-2l1" firstAttribute="leading" secondItem="RnZ-ma-7SX" secondAttribute="leading" constant="20" id="e5t-5v-wuT"/>
+                            <constraint firstAttribute="trailing" secondItem="Isu-cF-2l1" secondAttribute="trailing" constant="20" id="gSZ-Wv-g5t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="Ll6-OP-4bb" id="uip-Kv-9s3"/>
+                        <outlet property="tutImageView" destination="1iv-af-QRF" id="73c-bU-2wG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cjG-Cb-D2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-239" y="829"/>
         </scene>
     </scenes>
 </document>

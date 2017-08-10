@@ -66,6 +66,8 @@
 		13146B5B1F3CBB75003F00BA /* movieApp */ = {
 			isa = PBXGroup;
 			children = (
+				13146BA71F3CD1DA003F00BA /* ContentTutViewController.h */,
+				13146BA81F3CD1DA003F00BA /* ContentTutViewController.m */,
 				13146B5F1F3CBB76003F00BA /* AppDelegate.h */,
 				13146B601F3CBB76003F00BA /* AppDelegate.m */,
 				13146B621F3CBB76003F00BA /* ViewController.h */,
@@ -78,8 +80,6 @@
 				13146B6D1F3CBB76003F00BA /* Info.plist */,
 				13146B5C1F3CBB75003F00BA /* Supporting Files */,
 				13146B7C1F3CC2CF003F00BA /* Localizable.strings */,
-				13146BA71F3CD1DA003F00BA /* ContentTutViewController.h */,
-				13146BA81F3CD1DA003F00BA /* ContentTutViewController.m */,
 			);
 			path = movieApp;
 			sourceTree = "<group>";

@@ -97,8 +97,9 @@
     //vc.strImage = devices[index];
     [vc.view setBackgroundColor:[UIColor blueColor]];
     vc.pageIndex = index;
-    [vc.titleLabel setText:@"Hello"];
+    [vc.titleLabel setText:NSLocalizedString(@"title", @"displays title")];
     [vc.tutImageView setBackgroundColor:[UIColor purpleColor] ];
+    
     
     return vc;
 }

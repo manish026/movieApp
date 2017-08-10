@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContentTutViewController : UIPageViewController
+@interface ContentTutViewController : UIViewController
 
 @property NSUInteger pageIndex;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *tutImageView;
+@property (weak, nonatomic) IBOutlet UIStackView *views;
 
 @end
