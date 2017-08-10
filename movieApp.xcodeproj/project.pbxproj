@@ -13,6 +13,9 @@
 		13146B671F3CBB76003F00BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13146B651F3CBB76003F00BA /* Main.storyboard */; };
 		13146B691F3CBB76003F00BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13146B681F3CBB76003F00BA /* Assets.xcassets */; };
 		13146B6C1F3CBB76003F00BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13146B6A1F3CBB76003F00BA /* LaunchScreen.storyboard */; };
+		13146B7A1F3CC2CF003F00BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 13146B7C1F3CC2CF003F00BA /* Localizable.strings */; };
+		13146BA91F3CD1DA003F00BA /* ContentTutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BA81F3CD1DA003F00BA /* ContentTutViewController.m */; };
+		13146BAC1F3CD4A0003F00BA /* TutorialPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BAB1F3CD4A0003F00BA /* TutorialPageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,11 @@
 		13146B681F3CBB76003F00BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13146B6B1F3CBB76003F00BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13146B6D1F3CBB76003F00BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13146B7B1F3CC2CF003F00BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		13146BA71F3CD1DA003F00BA /* ContentTutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentTutViewController.h; sourceTree = "<group>"; };
+		13146BA81F3CD1DA003F00BA /* ContentTutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentTutViewController.m; sourceTree = "<group>"; };
+		13146BAA1F3CD4A0003F00BA /* TutorialPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialPageViewController.h; sourceTree = "<group>"; };
+		13146BAB1F3CD4A0003F00BA /* TutorialPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialPageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +71,15 @@
 				13146B621F3CBB76003F00BA /* ViewController.h */,
 				13146B631F3CBB76003F00BA /* ViewController.m */,
 				13146B651F3CBB76003F00BA /* Main.storyboard */,
+				13146BAA1F3CD4A0003F00BA /* TutorialPageViewController.h */,
+				13146BAB1F3CD4A0003F00BA /* TutorialPageViewController.m */,
 				13146B681F3CBB76003F00BA /* Assets.xcassets */,
 				13146B6A1F3CBB76003F00BA /* LaunchScreen.storyboard */,
 				13146B6D1F3CBB76003F00BA /* Info.plist */,
 				13146B5C1F3CBB75003F00BA /* Supporting Files */,
+				13146B7C1F3CC2CF003F00BA /* Localizable.strings */,
+				13146BA71F3CD1DA003F00BA /* ContentTutViewController.h */,
+				13146BA81F3CD1DA003F00BA /* ContentTutViewController.m */,
 			);
 			path = movieApp;
 			sourceTree = "<group>";
@@ -110,6 +123,7 @@
 				TargetAttributes = {
 					13146B581F3CBB75003F00BA = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = USJQ28Q29N;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -138,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13146B6C1F3CBB76003F00BA /* LaunchScreen.storyboard in Resources */,
+				13146B7A1F3CC2CF003F00BA /* Localizable.strings in Resources */,
 				13146B691F3CBB76003F00BA /* Assets.xcassets in Resources */,
 				13146B671F3CBB76003F00BA /* Main.storyboard in Resources */,
 			);
@@ -150,6 +165,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13146BA91F3CD1DA003F00BA /* ContentTutViewController.m in Sources */,
+				13146BAC1F3CD4A0003F00BA /* TutorialPageViewController.m in Sources */,
 				13146B641F3CBB76003F00BA /* ViewController.m in Sources */,
 				13146B611F3CBB76003F00BA /* AppDelegate.m in Sources */,
 				13146B5E1F3CBB76003F00BA /* main.m in Sources */,
@@ -173,6 +190,14 @@
 				13146B6B1F3CBB76003F00BA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		13146B7C1F3CC2CF003F00BA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13146B7B1F3CC2CF003F00BA /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -274,6 +299,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = USJQ28Q29N;
 				INFOPLIST_FILE = movieApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.heady.movieDB.movieApp;
@@ -285,6 +311,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = USJQ28Q29N;
 				INFOPLIST_FILE = movieApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.heady.movieDB.movieApp;

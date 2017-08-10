@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ContentTutViewController.h"
 
 @interface ViewController ()
 
@@ -16,14 +17,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
+    
+    [self showTutorial];    // displays the tutorial view
+    
+    
+    }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - showTutorial
+
+
+-(void)showTutorial{
+    
+    self.tutorialPageViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"tutorialPageVC"];
+    
+    
+    self.tutorialPageViewController.view.frame = self.pageViewContainer.frame;
+    
+    [self.pageViewContainer addSubview:self.tutorialPageViewController.view];
+    [self addChildViewController:self.tutorialPageViewController];
+
+    
+}
+
 
 
 @end
