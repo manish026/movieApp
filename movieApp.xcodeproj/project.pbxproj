@@ -9,13 +9,19 @@
 /* Begin PBXBuildFile section */
 		13146B5E1F3CBB76003F00BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146B5D1F3CBB75003F00BA /* main.m */; };
 		13146B611F3CBB76003F00BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146B601F3CBB76003F00BA /* AppDelegate.m */; };
-		13146B641F3CBB76003F00BA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146B631F3CBB76003F00BA /* ViewController.m */; };
+		13146B641F3CBB76003F00BA /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146B631F3CBB76003F00BA /* InitialViewController.m */; };
 		13146B671F3CBB76003F00BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13146B651F3CBB76003F00BA /* Main.storyboard */; };
 		13146B691F3CBB76003F00BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13146B681F3CBB76003F00BA /* Assets.xcassets */; };
 		13146B6C1F3CBB76003F00BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13146B6A1F3CBB76003F00BA /* LaunchScreen.storyboard */; };
 		13146B7A1F3CC2CF003F00BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 13146B7C1F3CC2CF003F00BA /* Localizable.strings */; };
 		13146BA91F3CD1DA003F00BA /* ContentTutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BA81F3CD1DA003F00BA /* ContentTutViewController.m */; };
 		13146BAC1F3CD4A0003F00BA /* TutorialPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BAB1F3CD4A0003F00BA /* TutorialPageViewController.m */; };
+		13146BAF1F3DD13B003F00BA /* BlueBorderedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BAE1F3DD13B003F00BA /* BlueBorderedTextField.m */; };
+		13146BB61F3DD4E7003F00BA /* RoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BB51F3DD4E7003F00BA /* RoundedButton.m */; };
+		13146BB91F3DD8C5003F00BA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BB81F3DD8C5003F00BA /* HomeViewController.m */; };
+		13146BC61F3DDB6E003F00BA /* movieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BC51F3DDB6E003F00BA /* movieCollectionViewCell.m */; };
+		13146BC91F3DDEF0003F00BA /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BC71F3DDEF0003F00BA /* BaseViewController.m */; };
+		8EB03EAA3451620E912249F7 /* libPods-movieApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D736B781112CAA80B82988EB /* libPods-movieApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,8 +29,8 @@
 		13146B5D1F3CBB75003F00BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		13146B5F1F3CBB76003F00BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		13146B601F3CBB76003F00BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		13146B621F3CBB76003F00BA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		13146B631F3CBB76003F00BA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		13146B621F3CBB76003F00BA /* InitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		13146B631F3CBB76003F00BA /* InitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		13146B661F3CBB76003F00BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13146B681F3CBB76003F00BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13146B6B1F3CBB76003F00BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,6 +40,21 @@
 		13146BA81F3CD1DA003F00BA /* ContentTutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentTutViewController.m; sourceTree = "<group>"; };
 		13146BAA1F3CD4A0003F00BA /* TutorialPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialPageViewController.h; sourceTree = "<group>"; };
 		13146BAB1F3CD4A0003F00BA /* TutorialPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialPageViewController.m; sourceTree = "<group>"; };
+		13146BAD1F3DD13B003F00BA /* BlueBorderedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueBorderedTextField.h; sourceTree = "<group>"; };
+		13146BAE1F3DD13B003F00BA /* BlueBorderedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueBorderedTextField.m; sourceTree = "<group>"; };
+		13146BB01F3DD32D003F00BA /* Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
+		13146BB31F3DD3B6003F00BA /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		13146BB41F3DD4E7003F00BA /* RoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedButton.h; sourceTree = "<group>"; };
+		13146BB51F3DD4E7003F00BA /* RoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedButton.m; sourceTree = "<group>"; };
+		13146BB71F3DD8C5003F00BA /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		13146BB81F3DD8C5003F00BA /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		13146BC41F3DDB6E003F00BA /* movieCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = movieCollectionViewCell.h; sourceTree = "<group>"; };
+		13146BC51F3DDB6E003F00BA /* movieCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = movieCollectionViewCell.m; sourceTree = "<group>"; };
+		13146BC71F3DDEF0003F00BA /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		13146BC81F3DDEF0003F00BA /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		4128E5E61D8CFC8ACDC5C70B /* Pods-movieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.debug.xcconfig"; sourceTree = "<group>"; };
+		AC4B7C0C9A01720797E98E35 /* Pods-movieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.release.xcconfig"; sourceTree = "<group>"; };
+		D736B781112CAA80B82988EB /* libPods-movieApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-movieApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EB03EAA3451620E912249F7 /* libPods-movieApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +74,8 @@
 			children = (
 				13146B5B1F3CBB75003F00BA /* movieApp */,
 				13146B5A1F3CBB75003F00BA /* Products */,
+				771477411B8BEB0B6FC2F8B1 /* Pods */,
+				BD0D19AF87E24BB23F798190 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,15 +90,14 @@
 		13146B5B1F3CBB75003F00BA /* movieApp */ = {
 			isa = PBXGroup;
 			children = (
-				13146BA71F3CD1DA003F00BA /* ContentTutViewController.h */,
-				13146BA81F3CD1DA003F00BA /* ContentTutViewController.m */,
-				13146B5F1F3CBB76003F00BA /* AppDelegate.h */,
-				13146B601F3CBB76003F00BA /* AppDelegate.m */,
-				13146B621F3CBB76003F00BA /* ViewController.h */,
-				13146B631F3CBB76003F00BA /* ViewController.m */,
+				13146BC71F3DDEF0003F00BA /* BaseViewController.m */,
+				13146BC81F3DDEF0003F00BA /* BaseViewController.h */,
+				13146BBD1F3DD955003F00BA /* Constants */,
+				13146BBC1F3DD92C003F00BA /* CustomViews */,
+				13146BC21F3DDAEA003F00BA /* Initial+Tutorial */,
+				13146BC31F3DDB15003F00BA /* HomeVC */,
+				13146BBE1F3DD962003F00BA /* AppDelegate */,
 				13146B651F3CBB76003F00BA /* Main.storyboard */,
-				13146BAA1F3CD4A0003F00BA /* TutorialPageViewController.h */,
-				13146BAB1F3CD4A0003F00BA /* TutorialPageViewController.m */,
 				13146B681F3CBB76003F00BA /* Assets.xcassets */,
 				13146B6A1F3CBB76003F00BA /* LaunchScreen.storyboard */,
 				13146B6D1F3CBB76003F00BA /* Info.plist */,
@@ -92,6 +115,116 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		13146BBA1F3DD8FC003F00BA /* CustomTextFields */ = {
+			isa = PBXGroup;
+			children = (
+				13146BAD1F3DD13B003F00BA /* BlueBorderedTextField.h */,
+				13146BAE1F3DD13B003F00BA /* BlueBorderedTextField.m */,
+			);
+			name = CustomTextFields;
+			sourceTree = "<group>";
+		};
+		13146BBB1F3DD919003F00BA /* CustomButton */ = {
+			isa = PBXGroup;
+			children = (
+				13146BB41F3DD4E7003F00BA /* RoundedButton.h */,
+				13146BB51F3DD4E7003F00BA /* RoundedButton.m */,
+			);
+			name = CustomButton;
+			sourceTree = "<group>";
+		};
+		13146BBC1F3DD92C003F00BA /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				13146BBA1F3DD8FC003F00BA /* CustomTextFields */,
+				13146BBB1F3DD919003F00BA /* CustomButton */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		13146BBD1F3DD955003F00BA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				13146BB01F3DD32D003F00BA /* Colors.h */,
+				13146BB31F3DD3B6003F00BA /* PrefixHeader.pch */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		13146BBE1F3DD962003F00BA /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				13146B5F1F3CBB76003F00BA /* AppDelegate.h */,
+				13146B601F3CBB76003F00BA /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		13146BBF1F3DD971003F00BA /* ContentTutVC */ = {
+			isa = PBXGroup;
+			children = (
+				13146BA71F3CD1DA003F00BA /* ContentTutViewController.h */,
+				13146BA81F3CD1DA003F00BA /* ContentTutViewController.m */,
+			);
+			name = ContentTutVC;
+			sourceTree = "<group>";
+		};
+		13146BC01F3DD97D003F00BA /* TutorialVC */ = {
+			isa = PBXGroup;
+			children = (
+				13146BAA1F3CD4A0003F00BA /* TutorialPageViewController.h */,
+				13146BAB1F3CD4A0003F00BA /* TutorialPageViewController.m */,
+			);
+			name = TutorialVC;
+			sourceTree = "<group>";
+		};
+		13146BC11F3DDACD003F00BA /* InitialVC */ = {
+			isa = PBXGroup;
+			children = (
+				13146B621F3CBB76003F00BA /* InitialViewController.h */,
+				13146B631F3CBB76003F00BA /* InitialViewController.m */,
+			);
+			name = InitialVC;
+			sourceTree = "<group>";
+		};
+		13146BC21F3DDAEA003F00BA /* Initial+Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				13146BBF1F3DD971003F00BA /* ContentTutVC */,
+				13146BC01F3DD97D003F00BA /* TutorialVC */,
+				13146BC11F3DDACD003F00BA /* InitialVC */,
+			);
+			name = "Initial+Tutorial";
+			sourceTree = "<group>";
+		};
+		13146BC31F3DDB15003F00BA /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				13146BB71F3DD8C5003F00BA /* HomeViewController.h */,
+				13146BB81F3DD8C5003F00BA /* HomeViewController.m */,
+				13146BC41F3DDB6E003F00BA /* movieCollectionViewCell.h */,
+				13146BC51F3DDB6E003F00BA /* movieCollectionViewCell.m */,
+			);
+			name = HomeVC;
+			sourceTree = "<group>";
+		};
+		771477411B8BEB0B6FC2F8B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4128E5E61D8CFC8ACDC5C70B /* Pods-movieApp.debug.xcconfig */,
+				AC4B7C0C9A01720797E98E35 /* Pods-movieApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BD0D19AF87E24BB23F798190 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D736B781112CAA80B82988EB /* libPods-movieApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -99,9 +232,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13146B701F3CBB76003F00BA /* Build configuration list for PBXNativeTarget "movieApp" */;
 			buildPhases = (
+				31F61BD8A0BBD3D17795A219 /* [CP] Check Pods Manifest.lock */,
 				13146B551F3CBB75003F00BA /* Sources */,
 				13146B561F3CBB75003F00BA /* Frameworks */,
 				13146B571F3CBB75003F00BA /* Resources */,
+				FB31D969709F3A681886CF76 /* [CP] Embed Pods Frameworks */,
+				9ACEAB6194EABAC293FB8288 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,16 +296,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		31F61BD8A0BBD3D17795A219 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-movieApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9ACEAB6194EABAC293FB8288 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-movieApp/Pods-movieApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB31D969709F3A681886CF76 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-movieApp/Pods-movieApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		13146B551F3CBB75003F00BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13146BC61F3DDB6E003F00BA /* movieCollectionViewCell.m in Sources */,
+				13146BC91F3DDEF0003F00BA /* BaseViewController.m in Sources */,
 				13146BA91F3CD1DA003F00BA /* ContentTutViewController.m in Sources */,
 				13146BAC1F3CD4A0003F00BA /* TutorialPageViewController.m in Sources */,
-				13146B641F3CBB76003F00BA /* ViewController.m in Sources */,
+				13146BAF1F3DD13B003F00BA /* BlueBorderedTextField.m in Sources */,
+				13146B641F3CBB76003F00BA /* InitialViewController.m in Sources */,
+				13146BB91F3DD8C5003F00BA /* HomeViewController.m in Sources */,
 				13146B611F3CBB76003F00BA /* AppDelegate.m in Sources */,
 				13146B5E1F3CBB76003F00BA /* main.m in Sources */,
+				13146BB61F3DD4E7003F00BA /* RoundedButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,9 +489,11 @@
 		};
 		13146B711F3CBB76003F00BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4128E5E61D8CFC8ACDC5C70B /* Pods-movieApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = USJQ28Q29N;
+				GCC_PREFIX_HEADER = movieApp/PrefixHeader.pch;
 				INFOPLIST_FILE = movieApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.heady.movieDB.movieApp;
@@ -309,9 +503,11 @@
 		};
 		13146B721F3CBB76003F00BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC4B7C0C9A01720797E98E35 /* Pods-movieApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = USJQ28Q29N;
+				GCC_PREFIX_HEADER = movieApp/PrefixHeader.pch;
 				INFOPLIST_FILE = movieApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.heady.movieDB.movieApp;
@@ -338,6 +534,7 @@
 				13146B721F3CBB76003F00BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

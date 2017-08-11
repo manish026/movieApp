@@ -6,14 +6,14 @@
 //  Copyright © 2017 Manish. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "InitialViewController.h"
 #import "ContentTutViewController.h"
 
-@interface ViewController ()
+@interface InitialViewController ()
 
 @end
 
-@implementation ViewController
+@implementation InitialViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
