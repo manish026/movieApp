@@ -8,6 +8,8 @@
 
 #import "HomeViewController.h"
 #import "movieCollectionViewCell.h"
+#import "MovieDB.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface HomeViewController ()
 
@@ -15,9 +17,31 @@
 
 @implementation HomeViewController
 
+@synthesize movieArray;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.parameterDictionary setValue:@"1" forKey:@"page"];
+    
+    [self.webServiceHelper callGetDataWithMethod:@"/popular" withParameters:self.parameterDictionary withHud:YES success:^(id response) {
+        
+        NSDictionary * dictResponse = (NSDictionary *)response;
+        NSArray * resultArray = [dictResponse valueForKey:@"results"];
+        movieArray = [NSMutableArray new];
+        for(NSMutableDictionary* dict in resultArray){
+            NSString * movieId = [dict valueForKey:@"id"];
+            [dict removeObjectForKey:@"id"];
+            [dict setObject:movieId forKey:@"movie_id"];
+            MovieDB * movie = [MovieDB new];
+            [movie setValuesForKeysWithDictionary:dict];
+            [movieArray addObject:movie];
+        }
+        [self.collectionView reloadData];
+        NSLog(@"%@",response);
+    } errorBlock:^(id error) {
+        
+    } withHeader:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,13 +60,16 @@
 */
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 10;
+    return movieArray.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     movieCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"movieCollectionViewCell" forIndexPath:indexPath];
-    
+    MovieDB * movie = [movieArray objectAtIndex:indexPath.row];
+    cell.movieTitle.text = movie.title;
+    NSString * imageurl = [NSString stringWithFormat:@"%@%@",imageBaseUrl,movie.poster_path];
+    [cell.movieImageView sd_setImageWithURL:[NSURL URLWithString:imageurl]];
     return cell;
     
     

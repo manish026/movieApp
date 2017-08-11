@@ -141,7 +141,7 @@
         <scene sceneID="yrS-2N-rn7">
             <objects>
                 <navigationController id="dzF-AA-R2i" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hTr-3x-Yyq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hTr-3x-Yyq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -171,7 +171,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter search text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Du-TK-fJR" customClass="BlueBorderedTextField">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter search text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Du-TK-fJR" customClass="BlueBorderedTextField">
                                 <rect key="frame" x="16" y="96" width="248" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -273,6 +273,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="BWW-K3-kaW"/>
+                    <connections>
+                        <outlet property="collectionView" destination="fp4-3N-2Zb" id="khN-dD-QYM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yo9-7U-XZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

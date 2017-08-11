@@ -11,4 +11,7 @@
 
 @interface HomeViewController : BaseViewController <UICollectionViewDelegate,UICollectionViewDataSource>
 
+@property (strong,nonatomic) NSMutableArray * movieArray;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 @end

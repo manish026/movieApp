@@ -12,8 +12,8 @@
  */
 
 #import <UIKit/UIKit.h>
-
-
+#import "WebServiceHelper.h"
+#import "Constants.h"
 
 @interface BaseViewController : UIViewController<UITextFieldDelegate,UIGestureRecognizerDelegate>
 
@@ -25,6 +25,20 @@
 @property CGPoint touchPoint;
 
 @property (strong,nonatomic) NSNotification * keyboardNotification;
+@property (strong,nonatomic) WebServiceHelper * webServiceHelper;
+
+@property NSUInteger i;
+@property NSUInteger prevY ;
+@property BOOL keyboardDisplaying;
+@property CGRect keyboardRect;
+@property CGPoint tfRect;
+
+@property NSUInteger kboardheight;
+@property BOOL hasScrolledToTop;
+@property CGPoint touchP;
+
+@property NSMutableDictionary * parameterDictionary;
+
 
 //-(CGFloat)heightForText:(NSString *)text;
 @end
