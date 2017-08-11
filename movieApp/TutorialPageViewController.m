@@ -94,8 +94,6 @@
 -(ContentTutViewController *)viewControllerAtIndex:(NSUInteger)index
 {
     ContentTutViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"vc"];
-    //vc.strImage = devices[index];
-    [vc.view setBackgroundColor:[UIColor blueColor]];
     vc.pageIndex = index;
     [vc.titleLabel setText:NSLocalizedString(@"title", @"displays title")];
     [vc.tutImageView setBackgroundColor:[UIColor purpleColor] ];
