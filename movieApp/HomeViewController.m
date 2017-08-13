@@ -98,6 +98,12 @@
     
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGRect rect = self.view.frame;
+    return CGSizeMake(rect.size.width/320 * 131, rect.size.height/504 * 167);
+}
+
 - (IBAction)searchClicked:(UIButton *)sender {
     
     [self.parameterDictionary setValue:self.searchTextField.text forKey:@"query"];

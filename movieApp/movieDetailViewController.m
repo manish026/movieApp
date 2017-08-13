@@ -33,6 +33,7 @@
     [self.descriptionTitleLabel setText:NSLocalizedString(@"desciption_Title", @"title for description")];
     self.movieTitleLabel.text = self.movie.original_title;
     [self.rateView setStarFillColor:movieBlueColor];
+    [self.rateView setStarSize:self.view.frame.size.width/414*30];
     [self.rateView setRating:[_movie.vote_average floatValue]/2.0];
     NSString * imageurl = [NSString stringWithFormat:@"%@%@",posterBaseUrl,self.movie.poster_path];
     [self.posterImageView sd_setImageWithURL:[NSURL URLWithString:imageurl]];
