@@ -18,5 +18,6 @@
 @property (strong,nonatomic) NSDictionary * searchDictionary;
 - (IBAction)searchClicked:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIView *searchView;
+@property (strong, nonatomic) NSString * vcTitle;
 
 @end

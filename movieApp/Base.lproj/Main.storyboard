@@ -267,7 +267,7 @@
                                                                 </label>
                                                             </subviews>
                                                         </view>
-                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.55193172089041098" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.2794306506849315" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="DbO-Oa-G91" secondAttribute="bottom" constant="10" id="Dma-Qj-oQo"/>
                                                             <constraint firstAttribute="trailing" secondItem="Pa7-HL-WtD" secondAttribute="trailing" id="EDh-0M-gY9"/>

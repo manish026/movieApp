@@ -20,14 +20,19 @@
 
 @synthesize movieArray,fromSearch;
 
+#pragma mark - Life cycle methods
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
    
+   
+    
     if(fromSearch){
         
         [self handleResponse:self.searchDictionary];
         self.searchView.hidden = YES;
+        self.title = self.vcTitle;
         
         
     }else{
@@ -39,36 +44,22 @@
     
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
+    
+    UIBarButtonItem * sortButton = [[UIBarButtonItem alloc]initWithImage:[ UIImage imageNamed:@"sort" ] style:UIBarButtonItemStylePlain target:self action:@selector(sortMovie)];
+    
+    [self.navigationItem setRightBarButtonItem:sortButton];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
--(void)loadDataWithPageNumber : (NSString *) page withHUD : (BOOL) showHUD{
-    
-     [self.parameterDictionary setValue:page forKey:@"page"];
-    
-    [self.webServiceHelper callGetDataWithMethod:@"movie/popular" withParameters:self.parameterDictionary withHud:showHUD success:^(id response) {
-        
-        //NSDictionary * dictResponse = (NSDictionary *)response;
-        [self handleResponse:response];
-       
-    } errorBlock:^(id error) {
-        
-    } withHeader:nil];
-}
 
 
+#pragma mark - CollectionView Data Source
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return movieArray.count;
@@ -85,6 +76,8 @@
     
     
 }
+
+#pragma mark - CollectionView Delegate
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -104,6 +97,8 @@
     return CGSizeMake(rect.size.width/320 * 131, rect.size.height/504 * 167);
 }
 
+#pragma mark - Button Click
+
 - (IBAction)searchClicked:(UIButton *)sender {
     
     [self.parameterDictionary setValue:self.searchTextField.text forKey:@"query"];
@@ -113,6 +108,7 @@
         HomeViewController * searchViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
         searchViewController.searchDictionary = response;
         searchViewController.fromSearch = YES;
+        searchViewController.vcTitle = self.searchTextField.text;
         [self.navigationController pushViewController:searchViewController animated:YES];
         
     } errorBlock:^(id error) {
@@ -120,6 +116,10 @@
     } withHeader:nil];
     
 }
+
+
+#pragma mark - webservice helper methods
+// handles webservice response.
 
 -(void)handleResponse : (NSDictionary *) dictResponse{
     
@@ -137,10 +137,37 @@
         MovieDB * movie = [MovieDB new];
         [movie setValuesForKeysWithDictionary:dict];
         [movieArray addObject:movie];
-        [self.collectionView reloadData];
+        
+        
     }
+    
+    NSSortDescriptor* sortPastByDate = [NSSortDescriptor sortDescriptorWithKey:@"vote_average" ascending:FALSE];
+    [movieArray sortUsingDescriptors:[NSArray arrayWithObject:sortPastByDate]];
+    
+    
+    [self.collectionView reloadData];
     
     
     
 }
+
+-(void)loadDataWithPageNumber : (NSString *) page withHUD : (BOOL) showHUD{
+    
+    [self.parameterDictionary setValue:page forKey:@"page"];
+    
+    [self.webServiceHelper callGetDataWithMethod:@"movie/popular" withParameters:self.parameterDictionary withHud:showHUD success:^(id response) {
+        
+        //NSDictionary * dictResponse = (NSDictionary *)response;
+        [self handleResponse:response];
+        
+    } errorBlock:^(id error) {
+        
+    } withHeader:nil];
+}
+
+-(void)sortMovie{
+    
+}
+
+
 @end
