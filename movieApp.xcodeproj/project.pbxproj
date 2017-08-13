@@ -24,7 +24,8 @@
 		13146BCC1F3E2203003F00BA /* WebServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BCA1F3E2203003F00BA /* WebServiceHelper.m */; };
 		13146BD21F3E2F4B003F00BA /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BD11F3E2F4B003F00BA /* Constants.m */; };
 		13146BD41F3E364A003F00BA /* MovieDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BD31F3E364A003F00BA /* MovieDB.m */; };
-		8EB03EAA3451620E912249F7 /* libPods-movieApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D736B781112CAA80B82988EB /* libPods-movieApp.a */; };
+		139201651F3F3F8D0051A81A /* movieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139201641F3F3F8D0051A81A /* movieDetailViewController.m */; };
+		AA555C8DE31A3AEF37A4F92B /* libPods-movieApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4366185D370DACF35206CC62 /* libPods-movieApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,9 +62,11 @@
 		13146BD01F3E2F4B003F00BA /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		13146BD11F3E2F4B003F00BA /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		13146BD31F3E364A003F00BA /* MovieDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDB.m; sourceTree = "<group>"; };
+		139201631F3F3F8D0051A81A /* movieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = movieDetailViewController.h; sourceTree = "<group>"; };
+		139201641F3F3F8D0051A81A /* movieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = movieDetailViewController.m; sourceTree = "<group>"; };
 		4128E5E61D8CFC8ACDC5C70B /* Pods-movieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4366185D370DACF35206CC62 /* libPods-movieApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-movieApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC4B7C0C9A01720797E98E35 /* Pods-movieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.release.xcconfig"; sourceTree = "<group>"; };
-		D736B781112CAA80B82988EB /* libPods-movieApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-movieApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EB03EAA3451620E912249F7 /* libPods-movieApp.a in Frameworks */,
+				AA555C8DE31A3AEF37A4F92B /* libPods-movieApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +121,8 @@
 				13146BCD1F3E2A03003F00BA /* MovieDB.h */,
 				13146BD01F3E2F4B003F00BA /* Constants.h */,
 				13146BD11F3E2F4B003F00BA /* Constants.m */,
+				139201631F3F3F8D0051A81A /* movieDetailViewController.h */,
+				139201641F3F3F8D0051A81A /* movieDetailViewController.m */,
 			);
 			path = movieApp;
 			sourceTree = "<group>";
@@ -235,7 +240,7 @@
 		BD0D19AF87E24BB23F798190 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D736B781112CAA80B82988EB /* libPods-movieApp.a */,
+				4366185D370DACF35206CC62 /* libPods-movieApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -354,9 +359,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-movieApp/Pods-movieApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Canvas/Canvas.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/StarryStars/StarryStars.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Canvas.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StarryStars.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -376,6 +390,7 @@
 				13146BA91F3CD1DA003F00BA /* ContentTutViewController.m in Sources */,
 				13146BAC1F3CD4A0003F00BA /* TutorialPageViewController.m in Sources */,
 				13146BAF1F3DD13B003F00BA /* BlueBorderedTextField.m in Sources */,
+				139201651F3F3F8D0051A81A /* movieDetailViewController.m in Sources */,
 				13146B641F3CBB76003F00BA /* InitialViewController.m in Sources */,
 				13146BB91F3DD8C5003F00BA /* HomeViewController.m in Sources */,
 				13146B611F3CBB76003F00BA /* AppDelegate.m in Sources */,

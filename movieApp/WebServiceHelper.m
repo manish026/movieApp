@@ -7,8 +7,8 @@
 //
 
 #import "WebServiceHelper.h"
-#import <SVProgressHUD.h>
-#define baseUrl @"https://api.themoviedb.org/3/movie"
+#import "SVProgressHUD.h"
+#define baseUrl @"https://api.themoviedb.org/3"
 
 
 
@@ -41,7 +41,7 @@
     
     NSMutableString *urlString = [NSMutableString new];
     [urlString appendString:baseUrl];
-    //[urlString appendString:@"/"];
+    [urlString appendString:@"/"];
     [urlString appendString:strMethodName];
     
     if (requestDict) {

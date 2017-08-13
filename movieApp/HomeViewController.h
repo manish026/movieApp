@@ -13,5 +13,10 @@
 
 @property (strong,nonatomic) NSMutableArray * movieArray;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+@property BOOL fromSearch ;
+@property (strong,nonatomic) NSDictionary * searchDictionary;
+- (IBAction)searchClicked:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIView *searchView;
 
 @end

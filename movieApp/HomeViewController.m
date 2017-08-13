@@ -10,6 +10,7 @@
 #import "movieCollectionViewCell.h"
 #import "MovieDB.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "movieDetailViewController.h"
 
 @interface HomeViewController ()
 
@@ -17,31 +18,25 @@
 
 @implementation HomeViewController
 
-@synthesize movieArray;
+@synthesize movieArray,fromSearch;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.parameterDictionary setValue:@"1" forKey:@"page"];
+   
+    if(fromSearch){
+        
+        [self handleResponse:self.searchDictionary];
+        self.searchView.hidden = YES;
+        
+        
+    }else{
+        
+        [self loadDataWithPageNumber:@"1" withHUD:YES];
+        
+    }
     
-    [self.webServiceHelper callGetDataWithMethod:@"/popular" withParameters:self.parameterDictionary withHud:YES success:^(id response) {
-        
-        NSDictionary * dictResponse = (NSDictionary *)response;
-        NSArray * resultArray = [dictResponse valueForKey:@"results"];
-        movieArray = [NSMutableArray new];
-        for(NSMutableDictionary* dict in resultArray){
-            NSString * movieId = [dict valueForKey:@"id"];
-            [dict removeObjectForKey:@"id"];
-            [dict setObject:movieId forKey:@"movie_id"];
-            MovieDB * movie = [MovieDB new];
-            [movie setValuesForKeysWithDictionary:dict];
-            [movieArray addObject:movie];
-        }
-        [self.collectionView reloadData];
-        NSLog(@"%@",response);
-    } errorBlock:^(id error) {
-        
-    } withHeader:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,6 +54,22 @@
 }
 */
 
+-(void)loadDataWithPageNumber : (NSString *) page withHUD : (BOOL) showHUD{
+    
+     [self.parameterDictionary setValue:page forKey:@"page"];
+    
+    [self.webServiceHelper callGetDataWithMethod:@"movie/popular" withParameters:self.parameterDictionary withHud:showHUD success:^(id response) {
+        
+        //NSDictionary * dictResponse = (NSDictionary *)response;
+        [self handleResponse:response];
+       
+    } errorBlock:^(id error) {
+        
+    } withHeader:nil];
+}
+
+
+
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return movieArray.count;
 }
@@ -75,4 +86,55 @@
     
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    MovieDB * movie = [movieArray objectAtIndex:indexPath.row];
+    
+    movieDetailViewController * movieVC = [self.storyboard instantiateViewControllerWithIdentifier:@"movieDetailViewController"];
+    movieVC.movie = movie;
+    
+    
+    [self.navigationController pushViewController:movieVC animated:YES];
+    
+}
+
+- (IBAction)searchClicked:(UIButton *)sender {
+    
+    [self.parameterDictionary setValue:self.searchTextField.text forKey:@"query"];
+    [self.webServiceHelper callGetDataWithMethod:@"search/movie" withParameters:self.parameterDictionary withHud:YES success:^(id response) {
+        
+        //[self handleResponse:response];
+        HomeViewController * searchViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+        searchViewController.searchDictionary = response;
+        searchViewController.fromSearch = YES;
+        [self.navigationController pushViewController:searchViewController animated:YES];
+        
+    } errorBlock:^(id error) {
+        
+    } withHeader:nil];
+    
+}
+
+-(void)handleResponse : (NSDictionary *) dictResponse{
+    
+    NSArray * resultArray = [dictResponse valueForKey:@"results"];
+    movieArray = [NSMutableArray new];
+    
+    for(NSMutableDictionary* dict in resultArray){
+        
+        // replacing id with movie_id
+        NSString * movieId = [dict valueForKey:@"id"];
+        [dict removeObjectForKey:@"id"];
+        [dict setObject:movieId forKey:@"movie_id"];
+        
+        
+        MovieDB * movie = [MovieDB new];
+        [movie setValuesForKeysWithDictionary:dict];
+        [movieArray addObject:movie];
+        [self.collectionView reloadData];
+    }
+    
+    
+    
+}
 @end
