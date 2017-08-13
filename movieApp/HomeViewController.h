@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 
-@interface HomeViewController : BaseViewController <UICollectionViewDelegate,UICollectionViewDataSource>
+@interface HomeViewController : BaseViewController <UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate>
 
 @property (strong,nonatomic) NSMutableArray * movieArray;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -19,5 +19,8 @@
 - (IBAction)searchClicked:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIView *searchView;
 @property (strong, nonatomic) NSString * vcTitle;
+@property NSUInteger page;
+@property NSUInteger pageCount;
+@property (strong, nonatomic) NSString * searchText;
 
 @end

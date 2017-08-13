@@ -18,7 +18,7 @@
 
 @implementation HomeViewController
 
-@synthesize movieArray,fromSearch;
+@synthesize movieArray,fromSearch,page;
 
 #pragma mark - Life cycle methods
 
@@ -27,6 +27,7 @@
     // Do any additional setup after loading the view.
    
    
+    page = 1;
     
     if(fromSearch){
         
@@ -37,7 +38,7 @@
         
     }else{
         
-        [self loadDataWithPageNumber:@"1" withHUD:YES];
+        [self loadDataWithPage];
         
     }
     
@@ -72,6 +73,7 @@
     cell.movieTitle.text = movie.title;
     NSString * imageurl = [NSString stringWithFormat:@"%@%@",imageBaseUrl,movie.poster_path];
     [cell.movieImageView sd_setImageWithURL:[NSURL URLWithString:imageurl]];
+    cell.tag = indexPath.row;
     return cell;
     
     
@@ -101,20 +103,53 @@
 
 - (IBAction)searchClicked:(UIButton *)sender {
     
+    if(![self.searchTextField.text  isEqual: @""]){
+    
+        [self loadSearchData];
+        
+    }else{
+        
+        
+    }
+    
+}
+
+-(void)loadSearchData{
+    
+    if(fromSearch){
+        page++;
+        [self.parameterDictionary setValue:self.searchText forKey:@"query"];
+        [self.parameterDictionary setValue:[NSString stringWithFormat:@"%lu",(unsigned long)page] forKey:@"page"];
+        [self.webServiceHelper callGetDataWithMethod:@"search/movie" withParameters:self.parameterDictionary withHud:YES success:^(id response) {
+            
+            [self handleResponse:response];
+            
+            
+        } errorBlock:^(id error) {
+            
+        } withHeader:nil];
+        
+    }else{
+        
     [self.parameterDictionary setValue:self.searchTextField.text forKey:@"query"];
+        
+    
+    [self.parameterDictionary removeObjectForKey:@"page"];
     [self.webServiceHelper callGetDataWithMethod:@"search/movie" withParameters:self.parameterDictionary withHud:YES success:^(id response) {
         
         //[self handleResponse:response];
         HomeViewController * searchViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
         searchViewController.searchDictionary = response;
         searchViewController.fromSearch = YES;
+        searchViewController.searchText = self.searchTextField.text;
         searchViewController.vcTitle = self.searchTextField.text;
         [self.navigationController pushViewController:searchViewController animated:YES];
         
     } errorBlock:^(id error) {
         
     } withHeader:nil];
-    
+        
+        }
 }
 
 
@@ -124,7 +159,12 @@
 -(void)handleResponse : (NSDictionary *) dictResponse{
     
     NSArray * resultArray = [dictResponse valueForKey:@"results"];
-    movieArray = [NSMutableArray new];
+    
+    if(!movieArray){
+        movieArray = [NSMutableArray new];
+    }
+    
+    self.pageCount = [[dictResponse valueForKey:@"total_pages"] integerValue];
     
     for(NSMutableDictionary* dict in resultArray){
         
@@ -141,8 +181,8 @@
         
     }
     
-    NSSortDescriptor* sortPastByDate = [NSSortDescriptor sortDescriptorWithKey:@"vote_average" ascending:FALSE];
-    [movieArray sortUsingDescriptors:[NSArray arrayWithObject:sortPastByDate]];
+//NSSortDescriptor* sortPastByDate = [NSSortDescriptor sortDescriptorWithKey:@"vote_average" ascending:FALSE];
+ //   [movieArray sortUsingDescriptors:[NSArray arrayWithObject:sortPastByDate]];
     
     
     [self.collectionView reloadData];
@@ -151,14 +191,15 @@
     
 }
 
--(void)loadDataWithPageNumber : (NSString *) page withHUD : (BOOL) showHUD{
+-(void)loadDataWithPage{
     
-    [self.parameterDictionary setValue:page forKey:@"page"];
+    [self.parameterDictionary setValue:[NSString stringWithFormat:@"%d",page ] forKey:@"page"];
     
-    [self.webServiceHelper callGetDataWithMethod:@"movie/popular" withParameters:self.parameterDictionary withHud:showHUD success:^(id response) {
+    [self.webServiceHelper callGetDataWithMethod:@"movie/popular" withParameters:self.parameterDictionary withHud:YES success:^(id response) {
         
         //NSDictionary * dictResponse = (NSDictionary *)response;
         [self handleResponse:response];
+        page++;
         
     } errorBlock:^(id error) {
         
@@ -167,6 +208,23 @@
 
 -(void)sortMovie{
     
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    
+    NSArray * visibleCells = [self.collectionView visibleCells];
+    movieCollectionViewCell * cell = [visibleCells lastObject];
+    
+    if(cell.tag >= (page-1) * 16 && page < _pageCount){
+        
+        if(fromSearch){
+            [self loadSearchData];
+        }else{
+            [self loadDataWithPage];
+        }
+        
+        
+    }
 }
 
 
