@@ -7,8 +7,7 @@
 //
 
 /*
- How to use : Make your view controller import and implement BaseViewController and to
- exclude a textview to move the view up just make its tag =1
+ How to use : Make your view controller import and implement BaseViewController 
  */
 
 #import <UIKit/UIKit.h>

@@ -34,7 +34,7 @@
         [self handleResponse:self.searchDictionary];
         self.searchView.hidden = YES;
         self.title = self.vcTitle;
-        
+        self.sortView.hidden = YES;
         
     }else{
         
@@ -47,13 +47,7 @@
     
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:YES];
-    
-    UIBarButtonItem * sortButton = [[UIBarButtonItem alloc]initWithImage:[ UIImage imageNamed:@"sort" ] style:UIBarButtonItemStylePlain target:self action:@selector(sortMovie)];
-    
-    [self.navigationItem setRightBarButtonItem:sortButton];
-}
+
 
 
 
@@ -105,8 +99,31 @@
     movieDetailViewController * movieVC = [self.storyboard instantiateViewControllerWithIdentifier:@"movieDetailViewController"];
     movieVC.movie = movie;
     
-    
-    [self.navigationController pushViewController:movieVC animated:YES];
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        self.view.alpha = 0.8;
+        
+        
+    } completion:^(BOOL finished) {
+        
+        movieVC.view.alpha = 0.9;
+
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            
+            [self.view addSubview:movieVC.view];
+            [self addChildViewController:movieVC];
+            movieVC.view.alpha = 1.0;
+            
+        } completion:^(BOOL finished) {
+            
+            
+            [self.navigationController pushViewController:movieVC animated:NO];
+            [movieVC.view removeFromSuperview];
+            self.view.alpha = 1.0;
+        }];
+        
+    }];
     
 }
 
@@ -131,43 +148,7 @@
     
 }
 
--(void)loadSearchData{
-    
-    if(fromSearch){
-        page++;
-        [self.parameterDictionary setValue:self.searchText forKey:@"query"];
-        [self.parameterDictionary setValue:[NSString stringWithFormat:@"%lu",(unsigned long)page] forKey:@"page"];
-        [self.webServiceHelper callGetDataWithMethod:@"search/movie" withParameters:self.parameterDictionary withHud:YES success:^(id response) {
-            
-            [self handleResponse:response];
-            
-            
-        } errorBlock:^(id error) {
-            
-        } withHeader:nil];
-        
-    }else{
-        
-    [self.parameterDictionary setValue:self.searchTextField.text forKey:@"query"];
-        
-    
-    [self.parameterDictionary removeObjectForKey:@"page"];
-    [self.webServiceHelper callGetDataWithMethod:@"search/movie" withParameters:self.parameterDictionary withHud:YES success:^(id response) {
-        
-        //[self handleResponse:response];
-        HomeViewController * searchViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
-        searchViewController.searchDictionary = response;
-        searchViewController.fromSearch = YES;
-        searchViewController.searchText = self.searchTextField.text;
-        searchViewController.vcTitle = self.searchTextField.text;
-        [self.navigationController pushViewController:searchViewController animated:YES];
-        
-    } errorBlock:^(id error) {
-        
-    } withHeader:nil];
-        
-        }
-}
+
 
 
 #pragma mark - webservice helper methods
@@ -198,8 +179,7 @@
         
     }
     
-//NSSortDescriptor* sortPastByDate = [NSSortDescriptor sortDescriptorWithKey:@"vote_average" ascending:FALSE];
- //   [movieArray sortUsingDescriptors:[NSArray arrayWithObject:sortPastByDate]];
+
     
     
     [self.collectionView reloadData];
@@ -207,6 +187,44 @@
     
     
 }
+
+
+
+
+#pragma mark - ScrollView delegate
+
+
+-(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
+    
+    NSArray * visibleCells = [self.collectionView visibleCells];
+    movieCollectionViewCell * cell = [visibleCells lastObject];
+    
+    if(cell.tag >= [movieArray count] - 10  && page < _pageCount){
+        
+        if(fromSearch){
+            [self loadSearchData];
+        }else{
+            [self loadDataWithPage];
+        }
+        
+        
+    }
+    
+}
+
+#pragma mark - Segment switched
+
+- (IBAction)popularitySegmentChanged:(UISegmentedControl *)sender {
+    
+    self.loadServerMethod = (sender.selectedSegmentIndex == 0)?@"movie/popular":@"movie/top_rated";
+    
+    movieArray = [NSMutableArray new];
+    page = 1;
+    [self loadDataWithPage];
+}
+
+
+#pragma mark - Load data methods
 
 -(void)loadDataWithPage{
     
@@ -228,35 +246,42 @@
     } withHeader:nil];
 }
 
--(void)sortMovie{
+-(void)loadSearchData{
     
-
-}
-
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    
-    NSArray * visibleCells = [self.collectionView visibleCells];
-    movieCollectionViewCell * cell = [visibleCells lastObject];
-    
-    if(cell.tag >= (page-1) * 16 && page < _pageCount){
+    if(fromSearch){
+        page++;
+        [self.parameterDictionary setValue:self.searchText forKey:@"query"];
+        [self.parameterDictionary setValue:[NSString stringWithFormat:@"%lu",(unsigned long)page] forKey:@"page"];
+        [self.webServiceHelper callGetDataWithMethod:@"search/movie" withParameters:self.parameterDictionary withHud:YES success:^(id response) {
+            
+            [self handleResponse:response];
+            
+            
+        } errorBlock:^(id error) {
+            
+        } withHeader:nil];
         
-        if(fromSearch){
-            [self loadSearchData];
-        }else{
-            [self loadDataWithPage];
-        }
+    }else{
         
+        [self.parameterDictionary setValue:self.searchTextField.text forKey:@"query"];
+        
+        
+        [self.parameterDictionary removeObjectForKey:@"page"];
+        [self.webServiceHelper callGetDataWithMethod:@"search/movie" withParameters:self.parameterDictionary withHud:YES success:^(id response) {
+            
+            //[self handleResponse:response];
+            HomeViewController * searchViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+            searchViewController.searchDictionary = response;
+            searchViewController.fromSearch = YES;
+            searchViewController.searchText = self.searchTextField.text;
+            searchViewController.vcTitle = self.searchTextField.text;
+            [self.navigationController pushViewController:searchViewController animated:YES];
+            
+        } errorBlock:^(id error) {
+            
+        } withHeader:nil];
         
     }
 }
 
-
-- (IBAction)popularitySegmentChanged:(UISegmentedControl *)sender {
-    
-    self.loadServerMethod = (sender.selectedSegmentIndex == 0)?@"movie/popular":@"movie/top_rated";
-    
-    movieArray = [NSMutableArray new];
-    page = 1;
-    [self loadDataWithPage];
-}
 @end

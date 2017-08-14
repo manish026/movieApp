@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define movieBlueColor [UIColor colorWithRed:15.0/255.0 green:168.0/255.0 blue:216.0/255.0 alpha:1.0]
+#define movieBlueColor [UIColor colorWithRed:42.0/255.0 green:120.0/255.0 blue:189.0/255.0 alpha:1.0]
 
 @interface Colors : NSObject
 

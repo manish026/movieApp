@@ -24,6 +24,7 @@
 @property (strong, nonatomic) NSString * searchText;
 
 @property (strong, nonatomic) NSString * loadServerMethod;
+@property (weak, nonatomic) IBOutlet UIStackView *sortView;
 
 - (IBAction)popularitySegmentChanged:(UISegmentedControl *)sender;
 
