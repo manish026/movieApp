@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A315i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -236,10 +236,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JaY-f2-5Xr">
-                                        <rect key="frame" x="0.0" y="82" width="320" height="422"/>
+                                        <rect key="frame" x="0.0" y="82" width="320" height="362"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fp4-3N-2Zb">
-                                                <rect key="frame" x="8" y="2" width="304" height="412"/>
+                                                <rect key="frame" x="8" y="2" width="304" height="352"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="smG-kF-3TP">
                                                     <size key="itemSize" width="131" height="167"/>
@@ -296,15 +296,38 @@
                                         </subviews>
                                         <edgeInsets key="layoutMargins" top="2" left="8" bottom="8" right="8"/>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Vcn-fw-gXk">
+                                        <rect key="frame" x="0.0" y="454" width="320" height="50"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gVr-0T-AiB">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
+                                                <segments>
+                                                    <segment title="" image="popularity"/>
+                                                    <segment title="" image="top_rated">
+                                                        <size key="contentOffset" width="2" height="0.0"/>
+                                                    </segment>
+                                                </segments>
+                                                <color key="tintColor" red="0.20392156859999999" green="0.65490196079999996" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="popularitySegmentChanged:" destination="bt5-S9-s3g" eventType="valueChanged" id="k1i-JQ-fR7"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="gVr-0T-AiB" secondAttribute="bottom" id="EOG-gk-vld"/>
+                                            <constraint firstAttribute="height" constant="50" id="Hnu-aS-5qP"/>
+                                            <constraint firstItem="gVr-0T-AiB" firstAttribute="top" secondItem="Vcn-fw-gXk" secondAttribute="top" id="SWK-1e-T9X"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rH7-vj-A5v" secondAttribute="trailing" id="BJo-sy-b8m"/>
                             <constraint firstItem="6vf-oO-DXQ" firstAttribute="top" secondItem="rH7-vj-A5v" secondAttribute="bottom" id="He1-XU-NZa"/>
                             <constraint firstItem="rH7-vj-A5v" firstAttribute="top" secondItem="p58-OA-HPp" secondAttribute="bottom" id="Scs-Dd-EQi"/>
-                            <constraint firstAttribute="trailing" secondItem="rH7-vj-A5v" secondAttribute="trailing" id="Wwm-om-bGD"/>
-                            <constraint firstItem="rH7-vj-A5v" firstAttribute="leading" secondItem="0kf-le-ldK" secondAttribute="leading" id="fyQ-T7-Gdk"/>
+                            <constraint firstItem="rH7-vj-A5v" firstAttribute="leading" secondItem="0kf-le-ldK" secondAttribute="leading" id="dzf-hv-Boc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="BWW-K3-kaW"/>
@@ -406,4 +429,8 @@
             <point key="canvasLocation" x="2917.5999999999999" y="62.518740629685162"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="popularity" width="50" height="50"/>
+        <image name="top_rated" width="50" height="50"/>
+    </resources>
 </document>

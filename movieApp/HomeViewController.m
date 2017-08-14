@@ -42,7 +42,7 @@
         
     }
     
-    [self registerForPreviewingWithDelegate:self sourceView:self.collectionView];
+    [self registerForPreviewingWithDelegate:self sourceView:self.collectionView];  // registers to 3d touch.
     
     
 }
@@ -210,9 +210,14 @@
 
 -(void)loadDataWithPage{
     
+    if(!self.loadServerMethod || [self.loadServerMethod isEqualToString:@""]){
+        self.loadServerMethod = [NSString new];
+        self.loadServerMethod = @"movie/popular";
+    }
+    
     [self.parameterDictionary setValue:[NSString stringWithFormat:@"%lu",(unsigned long)page ] forKey:@"page"];
     
-    [self.webServiceHelper callGetDataWithMethod:@"movie/popular" withParameters:self.parameterDictionary withHud:YES success:^(id response) {
+    [self.webServiceHelper callGetDataWithMethod:self.loadServerMethod withParameters:self.parameterDictionary withHud:YES success:^(id response) {
         
         //NSDictionary * dictResponse = (NSDictionary *)response;
         [self handleResponse:response];
@@ -225,6 +230,7 @@
 
 -(void)sortMovie{
     
+
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
@@ -245,4 +251,12 @@
 }
 
 
+- (IBAction)popularitySegmentChanged:(UISegmentedControl *)sender {
+    
+    self.loadServerMethod = (sender.selectedSegmentIndex == 0)?@"movie/popular":@"movie/top_rated";
+    
+    movieArray = [NSMutableArray new];
+    page = 1;
+    [self loadDataWithPage];
+}
 @end

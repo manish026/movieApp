@@ -23,4 +23,8 @@
 @property NSUInteger pageCount;
 @property (strong, nonatomic) NSString * searchText;
 
+@property (strong, nonatomic) NSString * loadServerMethod;
+
+- (IBAction)popularitySegmentChanged:(UISegmentedControl *)sender;
+
 @end
