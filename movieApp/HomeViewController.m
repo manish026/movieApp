@@ -42,6 +42,8 @@
         
     }
     
+    [self registerForPreviewingWithDelegate:self sourceView:self.collectionView];
+    
     
 }
 
@@ -53,11 +55,26 @@
     [self.navigationItem setRightBarButtonItem:sortButton];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+#pragma mark - 3DTouch delegates
+
+- (UIViewController *)previewingContext:(id <UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location
+{
+    movieDetailViewController * movieVC = [self.storyboard instantiateViewControllerWithIdentifier:@"movieDetailViewController"];
+    
+    movieVC.preferredContentSize = CGSizeMake(0.0, self.view.frame.size.height-200);
+    NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:location];
+    MovieDB * movie = [movieArray objectAtIndex:indexPath.row];
+    movieVC.movie = movie;
+    
+    return movieVC;
 }
 
+- (void)previewingContext:(id <UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit
+{
+    [self showViewController:viewControllerToCommit sender:self];
+}
 
 
 #pragma mark - CollectionView Data Source
@@ -193,7 +210,7 @@
 
 -(void)loadDataWithPage{
     
-    [self.parameterDictionary setValue:[NSString stringWithFormat:@"%d",page ] forKey:@"page"];
+    [self.parameterDictionary setValue:[NSString stringWithFormat:@"%lu",(unsigned long)page ] forKey:@"page"];
     
     [self.webServiceHelper callGetDataWithMethod:@"movie/popular" withParameters:self.parameterDictionary withHud:YES success:^(id response) {
         

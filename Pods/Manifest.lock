@@ -1,0 +1,23 @@
+PODS:
+  - Canvas (0.1.2)
+  - RateView (1.2)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SVProgressHUD (2.1.2)
+
+DEPENDENCIES:
+  - Canvas (~> 0.1.2)
+  - RateView
+  - SDWebImage (~> 3.8)
+  - SVProgressHUD
+
+SPEC CHECKSUMS:
+  Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
+  RateView: d4d12e9bb76dc23a77a56f4e5c5fb530a3f3f998
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+
+PODFILE CHECKSUM: 56dacf1dfaa3533f56d217a7363f7606755d5a9b
+
+COCOAPODS: 1.0.1

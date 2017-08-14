@@ -102,7 +102,6 @@
 		13146B5B1F3CBB75003F00BA /* movieApp */ = {
 			isa = PBXGroup;
 			children = (
-				13146BD31F3E364A003F00BA /* MovieDB.m */,
 				13146BCA1F3E2203003F00BA /* WebServiceHelper.m */,
 				13146BCB1F3E2203003F00BA /* WebServiceHelper.h */,
 				13146BC71F3DDEF0003F00BA /* BaseViewController.m */,
@@ -119,6 +118,7 @@
 				13146B5C1F3CBB75003F00BA /* Supporting Files */,
 				13146B7C1F3CC2CF003F00BA /* Localizable.strings */,
 				13146BCD1F3E2A03003F00BA /* MovieDB.h */,
+				13146BD31F3E364A003F00BA /* MovieDB.m */,
 				13146BD01F3E2F4B003F00BA /* Constants.h */,
 				13146BD11F3E2F4B003F00BA /* Constants.m */,
 				139201631F3F3F8D0051A81A /* movieDetailViewController.h */,
@@ -279,7 +279,7 @@
 				TargetAttributes = {
 					13146B581F3CBB75003F00BA = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = USJQ28Q29N;
+						DevelopmentTeam = NYKXF25YUY;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -332,7 +332,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		9ACEAB6194EABAC293FB8288 /* [CP] Copy Pods Resources */ = {
@@ -528,11 +528,12 @@
 			baseConfigurationReference = 4128E5E61D8CFC8ACDC5C70B /* Pods-movieApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = USJQ28Q29N;
+				DEVELOPMENT_TEAM = NYKXF25YUY;
 				GCC_PREFIX_HEADER = movieApp/PrefixHeader.pch;
 				INFOPLIST_FILE = movieApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.heady.movieDB.movieApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.practice.movieDB.movieApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -542,11 +543,12 @@
 			baseConfigurationReference = AC4B7C0C9A01720797E98E35 /* Pods-movieApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = USJQ28Q29N;
+				DEVELOPMENT_TEAM = NYKXF25YUY;
 				GCC_PREFIX_HEADER = movieApp/PrefixHeader.pch;
 				INFOPLIST_FILE = movieApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.heady.movieDB.movieApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.practice.movieDB.movieApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

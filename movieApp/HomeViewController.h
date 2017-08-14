@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 
-@interface HomeViewController : BaseViewController <UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate>
+@interface HomeViewController : BaseViewController <UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate,UIViewControllerPreviewingDelegate>
 
 @property (strong,nonatomic) NSMutableArray * movieArray;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
