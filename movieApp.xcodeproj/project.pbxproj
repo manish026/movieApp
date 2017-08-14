@@ -9,13 +9,10 @@
 /* Begin PBXBuildFile section */
 		13146B5E1F3CBB76003F00BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146B5D1F3CBB75003F00BA /* main.m */; };
 		13146B611F3CBB76003F00BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146B601F3CBB76003F00BA /* AppDelegate.m */; };
-		13146B641F3CBB76003F00BA /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146B631F3CBB76003F00BA /* InitialViewController.m */; };
 		13146B671F3CBB76003F00BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13146B651F3CBB76003F00BA /* Main.storyboard */; };
 		13146B691F3CBB76003F00BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13146B681F3CBB76003F00BA /* Assets.xcassets */; };
 		13146B6C1F3CBB76003F00BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13146B6A1F3CBB76003F00BA /* LaunchScreen.storyboard */; };
 		13146B7A1F3CC2CF003F00BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 13146B7C1F3CC2CF003F00BA /* Localizable.strings */; };
-		13146BA91F3CD1DA003F00BA /* ContentTutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BA81F3CD1DA003F00BA /* ContentTutViewController.m */; };
-		13146BAC1F3CD4A0003F00BA /* TutorialPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BAB1F3CD4A0003F00BA /* TutorialPageViewController.m */; };
 		13146BAF1F3DD13B003F00BA /* BlueBorderedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BAE1F3DD13B003F00BA /* BlueBorderedTextField.m */; };
 		13146BB61F3DD4E7003F00BA /* RoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BB51F3DD4E7003F00BA /* RoundedButton.m */; };
 		13146BB91F3DD8C5003F00BA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BB81F3DD8C5003F00BA /* HomeViewController.m */; };
@@ -25,6 +22,7 @@
 		13146BD21F3E2F4B003F00BA /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BD11F3E2F4B003F00BA /* Constants.m */; };
 		13146BD41F3E364A003F00BA /* MovieDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 13146BD31F3E364A003F00BA /* MovieDB.m */; };
 		139201651F3F3F8D0051A81A /* movieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139201641F3F3F8D0051A81A /* movieDetailViewController.m */; };
+		99863DFB1F41DA7F00ADEEBD /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 99863DFA1F41DA7F00ADEEBD /* Reachability.m */; };
 		AA555C8DE31A3AEF37A4F92B /* libPods-movieApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4366185D370DACF35206CC62 /* libPods-movieApp.a */; };
 /* End PBXBuildFile section */
 
@@ -33,17 +31,11 @@
 		13146B5D1F3CBB75003F00BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		13146B5F1F3CBB76003F00BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		13146B601F3CBB76003F00BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		13146B621F3CBB76003F00BA /* InitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
-		13146B631F3CBB76003F00BA /* InitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		13146B661F3CBB76003F00BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13146B681F3CBB76003F00BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13146B6B1F3CBB76003F00BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13146B6D1F3CBB76003F00BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13146B7B1F3CC2CF003F00BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		13146BA71F3CD1DA003F00BA /* ContentTutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentTutViewController.h; sourceTree = "<group>"; };
-		13146BA81F3CD1DA003F00BA /* ContentTutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentTutViewController.m; sourceTree = "<group>"; };
-		13146BAA1F3CD4A0003F00BA /* TutorialPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialPageViewController.h; sourceTree = "<group>"; };
-		13146BAB1F3CD4A0003F00BA /* TutorialPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialPageViewController.m; sourceTree = "<group>"; };
 		13146BAD1F3DD13B003F00BA /* BlueBorderedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueBorderedTextField.h; sourceTree = "<group>"; };
 		13146BAE1F3DD13B003F00BA /* BlueBorderedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueBorderedTextField.m; sourceTree = "<group>"; };
 		13146BB01F3DD32D003F00BA /* Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
@@ -66,6 +58,8 @@
 		139201641F3F3F8D0051A81A /* movieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = movieDetailViewController.m; sourceTree = "<group>"; };
 		4128E5E61D8CFC8ACDC5C70B /* Pods-movieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4366185D370DACF35206CC62 /* libPods-movieApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-movieApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99863DF91F41DA7F00ADEEBD /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		99863DFA1F41DA7F00ADEEBD /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		AC4B7C0C9A01720797E98E35 /* Pods-movieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,10 +78,10 @@
 		13146B501F3CBB75003F00BA = {
 			isa = PBXGroup;
 			children = (
-				13146B5B1F3CBB75003F00BA /* movieApp */,
-				13146B5A1F3CBB75003F00BA /* Products */,
-				771477411B8BEB0B6FC2F8B1 /* Pods */,
 				BD0D19AF87E24BB23F798190 /* Frameworks */,
+				771477411B8BEB0B6FC2F8B1 /* Pods */,
+				13146B5A1F3CBB75003F00BA /* Products */,
+				13146B5B1F3CBB75003F00BA /* movieApp */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,27 +96,20 @@
 		13146B5B1F3CBB75003F00BA /* movieApp */ = {
 			isa = PBXGroup;
 			children = (
-				13146BCA1F3E2203003F00BA /* WebServiceHelper.m */,
-				13146BCB1F3E2203003F00BA /* WebServiceHelper.h */,
-				13146BC71F3DDEF0003F00BA /* BaseViewController.m */,
-				13146BC81F3DDEF0003F00BA /* BaseViewController.h */,
-				13146BBD1F3DD955003F00BA /* Constants */,
-				13146BBC1F3DD92C003F00BA /* CustomViews */,
-				13146BC21F3DDAEA003F00BA /* Initial+Tutorial */,
-				13146BC31F3DDB15003F00BA /* HomeVC */,
 				13146BBE1F3DD962003F00BA /* AppDelegate */,
-				13146B651F3CBB76003F00BA /* Main.storyboard */,
-				13146B681F3CBB76003F00BA /* Assets.xcassets */,
-				13146B6A1F3CBB76003F00BA /* LaunchScreen.storyboard */,
-				13146B6D1F3CBB76003F00BA /* Info.plist */,
+				99863DFE1F41E44F00ADEEBD /* BaseViewController */,
+				13146BBD1F3DD955003F00BA /* Constants */,
+				99863E001F41E48000ADEEBD /* CustomObject */,
+				13146BBC1F3DD92C003F00BA /* CustomViews */,
+				13146BC31F3DDB15003F00BA /* HomeVC */,
 				13146B5C1F3CBB75003F00BA /* Supporting Files */,
+				99863DFC1F41E43700ADEEBD /* Webservice helper */,
+				99863E011F41E49100ADEEBD /* movieDetailsViewController */,
+				13146B681F3CBB76003F00BA /* Assets.xcassets */,
+				13146B6D1F3CBB76003F00BA /* Info.plist */,
+				13146B6A1F3CBB76003F00BA /* LaunchScreen.storyboard */,
 				13146B7C1F3CC2CF003F00BA /* Localizable.strings */,
-				13146BCD1F3E2A03003F00BA /* MovieDB.h */,
-				13146BD31F3E364A003F00BA /* MovieDB.m */,
-				13146BD01F3E2F4B003F00BA /* Constants.h */,
-				13146BD11F3E2F4B003F00BA /* Constants.m */,
-				139201631F3F3F8D0051A81A /* movieDetailViewController.h */,
-				139201641F3F3F8D0051A81A /* movieDetailViewController.m */,
+				13146B651F3CBB76003F00BA /* Main.storyboard */,
 			);
 			path = movieApp;
 			sourceTree = "<group>";
@@ -132,7 +119,7 @@
 			children = (
 				13146B5D1F3CBB75003F00BA /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		13146BBA1F3DD8FC003F00BA /* CustomTextFields */ = {
@@ -141,7 +128,7 @@
 				13146BAD1F3DD13B003F00BA /* BlueBorderedTextField.h */,
 				13146BAE1F3DD13B003F00BA /* BlueBorderedTextField.m */,
 			);
-			name = CustomTextFields;
+			path = CustomTextFields;
 			sourceTree = "<group>";
 		};
 		13146BBB1F3DD919003F00BA /* CustomButton */ = {
@@ -150,25 +137,27 @@
 				13146BB41F3DD4E7003F00BA /* RoundedButton.h */,
 				13146BB51F3DD4E7003F00BA /* RoundedButton.m */,
 			);
-			name = CustomButton;
+			path = CustomButton;
 			sourceTree = "<group>";
 		};
 		13146BBC1F3DD92C003F00BA /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				13146BBA1F3DD8FC003F00BA /* CustomTextFields */,
 				13146BBB1F3DD919003F00BA /* CustomButton */,
+				13146BBA1F3DD8FC003F00BA /* CustomTextFields */,
 			);
-			name = CustomViews;
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		13146BBD1F3DD955003F00BA /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 				13146BB01F3DD32D003F00BA /* Colors.h */,
+				13146BD01F3E2F4B003F00BA /* Constants.h */,
+				13146BD11F3E2F4B003F00BA /* Constants.m */,
 				13146BB31F3DD3B6003F00BA /* PrefixHeader.pch */,
 			);
-			name = Constants;
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		13146BBE1F3DD962003F00BA /* AppDelegate */ = {
@@ -177,44 +166,7 @@
 				13146B5F1F3CBB76003F00BA /* AppDelegate.h */,
 				13146B601F3CBB76003F00BA /* AppDelegate.m */,
 			);
-			name = AppDelegate;
-			sourceTree = "<group>";
-		};
-		13146BBF1F3DD971003F00BA /* ContentTutVC */ = {
-			isa = PBXGroup;
-			children = (
-				13146BA71F3CD1DA003F00BA /* ContentTutViewController.h */,
-				13146BA81F3CD1DA003F00BA /* ContentTutViewController.m */,
-			);
-			name = ContentTutVC;
-			sourceTree = "<group>";
-		};
-		13146BC01F3DD97D003F00BA /* TutorialVC */ = {
-			isa = PBXGroup;
-			children = (
-				13146BAA1F3CD4A0003F00BA /* TutorialPageViewController.h */,
-				13146BAB1F3CD4A0003F00BA /* TutorialPageViewController.m */,
-			);
-			name = TutorialVC;
-			sourceTree = "<group>";
-		};
-		13146BC11F3DDACD003F00BA /* InitialVC */ = {
-			isa = PBXGroup;
-			children = (
-				13146B621F3CBB76003F00BA /* InitialViewController.h */,
-				13146B631F3CBB76003F00BA /* InitialViewController.m */,
-			);
-			name = InitialVC;
-			sourceTree = "<group>";
-		};
-		13146BC21F3DDAEA003F00BA /* Initial+Tutorial */ = {
-			isa = PBXGroup;
-			children = (
-				13146BBF1F3DD971003F00BA /* ContentTutVC */,
-				13146BC01F3DD97D003F00BA /* TutorialVC */,
-				13146BC11F3DDACD003F00BA /* InitialVC */,
-			);
-			name = "Initial+Tutorial";
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		13146BC31F3DDB15003F00BA /* HomeVC */ = {
@@ -225,7 +177,7 @@
 				13146BC41F3DDB6E003F00BA /* movieCollectionViewCell.h */,
 				13146BC51F3DDB6E003F00BA /* movieCollectionViewCell.m */,
 			);
-			name = HomeVC;
+			path = HomeVC;
 			sourceTree = "<group>";
 		};
 		771477411B8BEB0B6FC2F8B1 /* Pods */ = {
@@ -235,6 +187,52 @@
 				AC4B7C0C9A01720797E98E35 /* Pods-movieApp.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		99863DFC1F41E43700ADEEBD /* Webservice helper */ = {
+			isa = PBXGroup;
+			children = (
+				99863DFF1F41E46800ADEEBD /* Reachability */,
+				13146BCB1F3E2203003F00BA /* WebServiceHelper.h */,
+				13146BCA1F3E2203003F00BA /* WebServiceHelper.m */,
+			);
+			path = "Webservice helper";
+			sourceTree = "<group>";
+		};
+		99863DFE1F41E44F00ADEEBD /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				13146BC81F3DDEF0003F00BA /* BaseViewController.h */,
+				13146BC71F3DDEF0003F00BA /* BaseViewController.m */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		99863DFF1F41E46800ADEEBD /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				99863DF91F41DA7F00ADEEBD /* Reachability.h */,
+				99863DFA1F41DA7F00ADEEBD /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		99863E001F41E48000ADEEBD /* CustomObject */ = {
+			isa = PBXGroup;
+			children = (
+				13146BCD1F3E2A03003F00BA /* MovieDB.h */,
+				13146BD31F3E364A003F00BA /* MovieDB.m */,
+			);
+			path = CustomObject;
+			sourceTree = "<group>";
+		};
+		99863E011F41E49100ADEEBD /* movieDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				139201631F3F3F8D0051A81A /* movieDetailViewController.h */,
+				139201641F3F3F8D0051A81A /* movieDetailViewController.m */,
+			);
+			path = movieDetailsViewController;
 			sourceTree = "<group>";
 		};
 		BD0D19AF87E24BB23F798190 /* Frameworks */ = {
@@ -387,11 +385,9 @@
 				13146BC61F3DDB6E003F00BA /* movieCollectionViewCell.m in Sources */,
 				13146BC91F3DDEF0003F00BA /* BaseViewController.m in Sources */,
 				13146BCC1F3E2203003F00BA /* WebServiceHelper.m in Sources */,
-				13146BA91F3CD1DA003F00BA /* ContentTutViewController.m in Sources */,
-				13146BAC1F3CD4A0003F00BA /* TutorialPageViewController.m in Sources */,
+				99863DFB1F41DA7F00ADEEBD /* Reachability.m in Sources */,
 				13146BAF1F3DD13B003F00BA /* BlueBorderedTextField.m in Sources */,
 				139201651F3F3F8D0051A81A /* movieDetailViewController.m in Sources */,
-				13146B641F3CBB76003F00BA /* InitialViewController.m in Sources */,
 				13146BB91F3DD8C5003F00BA /* HomeViewController.m in Sources */,
 				13146B611F3CBB76003F00BA /* AppDelegate.m in Sources */,
 				13146B5E1F3CBB76003F00BA /* main.m in Sources */,
@@ -410,6 +406,7 @@
 				13146B661F3CBB76003F00BA /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		13146B6A1F3CBB76003F00BA /* LaunchScreen.storyboard */ = {
@@ -418,6 +415,7 @@
 				13146B6B1F3CBB76003F00BA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		13146B7C1F3CC2CF003F00BA /* Localizable.strings */ = {
@@ -426,6 +424,7 @@
 				13146B7B1F3CC2CF003F00BA /* en */,
 			);
 			name = Localizable.strings;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -529,7 +528,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NYKXF25YUY;
-				GCC_PREFIX_HEADER = movieApp/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = movieApp/Constants/PrefixHeader.pch;
 				INFOPLIST_FILE = movieApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -544,7 +543,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NYKXF25YUY;
-				GCC_PREFIX_HEADER = movieApp/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = movieApp/Constants/PrefixHeader.pch;
 				INFOPLIST_FILE = movieApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

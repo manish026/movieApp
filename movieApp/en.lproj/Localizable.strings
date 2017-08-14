@@ -9,3 +9,5 @@
 "title" = "Hello";
 "release_Title" = "Release Date";
 "desciption_Title" = "Description :";
+"no_internet_title" = "No Internet.";
+"no_internet_message" = "No internet connection found please try again.";
